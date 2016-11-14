@@ -349,7 +349,7 @@ class DataFileReader(object):
     self._read_header()
 
     # ensure codec is valid
-    self.codec = self.GetMeta('avro.codec').decode('utf-8')
+    self.codec = self.GetMeta('avro.codec')
     if self.codec is None:
       self.codec = "null"
     if self.codec not in VALID_CODECS:
